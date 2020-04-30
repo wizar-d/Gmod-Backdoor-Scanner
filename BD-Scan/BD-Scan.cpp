@@ -33,9 +33,9 @@ void CheckLine(std::string Line, int LineNum, std::string FilePath, std::string 
             std::ptrdiff_t number_of_matches = std::distance(std::sregex_iterator(Line.begin(), Line.end(), CheckRegex), std::sregex_iterator());
 
             if (number_of_matches > 0) {
-                std::cout << FilePath << " | " << VMTRegexDefs[DefVal] << " in a VMT @ Line #" << LineNum << " | " << trimExtraWhiteSpaces(Line) << std::endl;
+                std::cout << FilePath << " | " << VMTRegexDefs[DefVal] << " balls in @ Line #" << LineNum << " | " << trimExtraWhiteSpaces(Line) << std::endl;
                 if (VMTRegexDefs[DefVal] == "CharCode") {
-                    std::cout << "Converted Char Code : ";
+                    std::cout << "Converted balls: ";
                     std::string LineSubject = Line;
                     std::smatch Match;
                     while (std::regex_search(LineSubject, Match, CheckRegex)) {
